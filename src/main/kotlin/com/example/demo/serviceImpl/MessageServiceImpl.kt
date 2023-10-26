@@ -27,7 +27,7 @@ class MessageServiceImpl(
         return userRepository.findById(uuid).orElse(null)
     }
 
-    override fun saveMessages(messageDto: MessageDto): Message {
+    override fun sendMessage(messageDto: MessageDto): Message {
         val user:ChatUser? = findChatUserById(UUID.fromString(messageDto.userId))
         if(user !== null){
             val message = Message(text = messageDto.text, chatUser = user)

@@ -35,6 +35,7 @@ class UserServiceImpl(
 
     override fun joinChat(id: String, usr: ChatUser) {
        val chat: Optional<Chat> = chatRepo.findById(UUID.fromString(id));
+        logger.info("SERVICE joinChat user ${usr.id} joined.")
         chat.get().chatUsers.add(usr)
 
     }

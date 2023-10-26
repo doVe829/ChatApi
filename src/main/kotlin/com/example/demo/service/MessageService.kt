@@ -9,7 +9,7 @@ interface MessageService {
 
     fun getAllMessages(): List<Message>;
 
-    fun saveMessages(msg: MessageDto):Message;
+    fun sendMessage(msg: MessageDto):Message;
 
     fun findById(id: String): Optional<Message>
 }
